@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>مؤسسة أويسس لايت</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: url("css/1763968073363.jpg") center center/cover no-repeat;
+    }
+    .sidebar {
+      min-height: 100vh;
+      background-color: #346fab;
+      color: white;
+    }
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      display: block;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    .sidebar a:hover {
+      background-color: #495057;
+    }
+     .footer {
+            background-color: #346fab;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+        }
+    .content {
+      padding: 30px;
+    }
+    .card {
+      border-radius: 15px;
+    }
+    .modal-header {
+      background-color: #343a40;
+      color: white;
+      border-bottom: none;
+    }
+    .modal-footer {
+      border-top: none;
+    }
+    table th, table td {
+      vertical-align: middle !important;
+    }
+    .info-box {
+      margin: 20px 0;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .operation-description {
+      background-color: #377bc0; /* لون خلفية أسود */
+      color: white; /* نص أبيض */
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .operation-box {
+      background-color: #377bc0; /* لون خلفية أسود */
+      color: white; /* نص أبيض */
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px 0;
+    }
+    .circular-logo {
+            width: 50px;  /* عرض الصورة */
+            height: 50px;  /* ارتفاع الصورة */
+            border-radius: 50%;  /* يجعل الشكل دائري */
+            object-fit: cover;  /* يحافظ على تناسق شكل الصورة */
+        }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- الشريط الجانبي -->
+    <nav class="col-md-3 col-lg-2 sidebar d-flex flex-column">
+      <div class="p-3 fs-4 border-bottom border-secondary text-center">
+        <img src="css/logo.jpg" alt="الشعار" class="circular-logo"> مؤسسة أويسس لايت
+      </div>
+      <a href="index.html" id="btnHome"><i class="fas fa-home"></i> الرئيسية</a>
+      <a href="about.html" id="btnabout"><i class="fas fa-users"></i> من نحن </a>
+      <a href="offers.html"  id="btnServices"><i class="fas fa-cogs"></i> منتجاتنا </a>
+      <a href="contact.html" id="btnContactUs"><i class="fas fa-phone"></i> اتصل بنا</a>
+      <div class="mt-auto p-3 border-top border-secondary text-center">
+        <a href="login.html" class="text-danger"><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a>
+      </div>
+    </nav>
+
+    <!-- المحتوى -->
+    <main class="col-md-9 col-lg-10 content text-center">
+      <h3 class="mb-4">مرحبًا بك في مؤسسة أويسس لايت 👋</h3>
+      <p>استخدم الأزرار في الشريط الجانبي للحصول على معلومات حول الموؤسسة.</p>
+
+      <!-- وصف المؤسسة -->
+      <div class="info-box" id="infoContent">
+        <h3>      في اويسس لايت    حلول إنارة حديثة بجودة عالية وتصميم أنيق    </h3>
+  <p> نحن نقدم خدمات الانارة المتكاملة باعلى جودة وباسعار منخفظه.لمزيد من المعلومات اتصل بنا
+  </p>
+      </div>
+
+      <!-- تفاصيل أخرى -->
+      <div id="detailsContent" style="display: none;">
+        <!-- أكمل التفاصيل الخاصة بك هنا -->
+        <p>تفاصيل إضافية حول من نحن أو خدماتنا أو معلومات الاتصال تأتي هنا...</p>
+      </div>
+      
+    </main>
+
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  (() => {
+    // وظائف الأزرار الجانبية لتحميل المحتوى المناسب
+    const infoContent = document.getElementById('infoContent');
+    const detailsContent = document.getElementById('detailsContent');
+
+    document.getElementById('btnHome').addEventListener('click', () => {
+      infoContent.style.display = 'block';
+      detailsContent.style.display = 'none';
+    });
+
+    document.getElementById('btnAboutUs').addEventListener('click', () => {
+      infoContent.style.display = 'none';
+      detailsContent.style.display = 'block';
+      detailsContent.innerHTML = '<h4>من نحن</h4><p>نقدم مجموعة متنوعة من الخدمات والمشاريع التي تهدف إلى تعزيز حياتك.</p>';
+    });
+
+    document.getElementById('btnServices').addEventListener('click', () => {
+      infoContent.style.display = 'none';
+      detailsContent.style.display = 'block';
+      detailsContent.innerHTML = '<h4>خدماتنا</h4><p>نقدم خدمات متعددة تشمل... (أكمل التفاصيل).</p>';
+    });
+
+    document.getElementById('btnContactUs').addEventListener('click', () => {
+      infoContent.style.display = 'none';
+      detailsContent.style.display = 'block';
+      detailsContent.innerHTML = '<h4>اتصل بنا</h4><p>للتواصل معنا، يرجى الاتصال على الرقم أو إرسال بريد إلكتروني.</p>';
+    });
+  })();
+</script>
+<div class="footer">
+    <p>حقوق النشر &copy; 2025 جميع الحقوق محفوظة | أنشأ بواسطة <b><a href="https:/wa.me/966539305335" target="_blank" style="color: white;">أويسس لايت</a></b></p>
+</div>
+</body>
+</html>
